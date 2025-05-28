@@ -109,6 +109,25 @@
             text-align: justify;
             margin-bottom: 15px;
         }
+
+        /* Estilos para la galería */
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .galeria img {
+            max-width: 200px;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -121,9 +140,10 @@
         <p>Vive la Experiencia de un Buen Sabor.</p>
         <button class="btn" onclick="mostrarSeccion('menu')">Ver Menú</button>
         <button class="btn" onclick="mostrarSeccion('nosotros')">Nosotros</button>
+        <button class="btn" onclick="mostrarSeccion('galeria')">Ver Galería</button>
     </div>
 
-        <!-- ========== SECCIÓN DEL MENÚ ========== -->
+    <!-- ========== SECCIÓN DEL MENÚ ========== -->
     <div id="menu" class="container section">
         <h1>Menú de la Cafetería</h1>
         <table>
@@ -135,65 +155,60 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Café Americano</td><td>$25</td><td>5 minutos</td></tr>
-                <tr><td>Capuchino</td><td>$35</td><td>7 minutos</td></tr>
-                <tr><td>Panini de Pollo</td><td>$60</td><td>10 minutos</td></tr>
-                <tr><td>Pastel de Chocolate</td><td>$40</td><td>4 minutos</td></tr>
-                <tr><td>Espresso</td><td>$20</td><td>3 minutos</td></tr>
-                <tr><td>Latte</td><td>$40</td><td>6 minutos</td></tr>
-                <tr><td>Moka</td><td>$45</td><td>6 minutos</td></tr>
-                <tr><td>Te Matcha</td><td>$38</td><td>5 minutos</td></tr>
-                <tr><td>Sandwich Vegano</td><td>$55</td><td>8 minutos</td></tr>
-                <tr><td>Brownie</td><td>$30</td><td>4 minutos</td></tr>
-                <tr><td>Jugo Natural</td><td>$28</td><td>3 minutos</td></tr>
-                <tr><td>Agua Mineral</td><td>$15</td><td>1 minuto</td></tr>
-                <tr><td>Croissant</td><td>$35</td><td>5 minutos</td></tr>
-                <tr><td>Té de Hierbas</td><td>$25</td><td>4 minutos</td></tr>
-                <tr><td>Chai Latte</td><td>$42</td><td>6 minutos</td></tr>
-                <tr><td>Ensalada César</td><td>$65</td><td>12 minutos</td></tr>
-                <tr><td>Hot Chocolate</td><td>$38</td><td>5 minutos</td></tr>
+                <tr><td>Te</td><td>$30.00</td><td>5 minutos</td></tr>
+                <tr><td>Crepas</td><td>$20.00</td><td>7 minutos</td></tr>
+                <tr><td>Licuados</td><td>$40.00</td><td>10 minutos</td></tr>
+                <tr><td>Pan</td><td>$10.00</td><td>Elección de Comprador</td></tr>
+                <tr><td>Malteadas</td><td>$45.00</td><td>7 minutos</td></tr>
+                <tr><td>Chocolate Caliente</td><td>$60.00</td><td>10 minutos</td></tr>
             </tbody>
         </table>
         <button class="btn" onclick="mostrarSeccion('inicio')">Volver al Inicio</button>
     </div>
 
-
     <!-- ========== SECCIÓN NOSOTROS ========== -->
     <div id="nosotros" class="container section">
         <h1>Sobre Nosotros</h1>
-        
         <h2>¿Quiénes somos?</h2>
         <p class="justificado">
             Somos una cafetería apasionada por brindar experiencias únicas a través del sabor, el aroma y el ambiente. En Coffee Shop creemos en el poder de una buena taza de café para conectar personas y momentos.
         </p>
-
         <h2>Misión</h2>
         <p class="justificado">
             Ofrecer productos de alta calidad en un ambiente acogedor, fomentando la cultura del café y el bienestar de nuestros clientes, colaboradores y comunidad.
         </p>
-
         <h2>Visión</h2>
         <p class="justificado">
             Ser la cafetería preferida en la ciudad, reconocida por su sabor inigualable, excelente atención y compromiso con la sostenibilidad.
         </p>
-
         <h2>Servicios</h2>
         <p class="justificado">
             Contamos con servicio de cafetería, alimentos ligeros, pedidos para llevar, eventos especiales, conexión Wi-Fi y recargas de energía para dispositivos.
         </p>
-
         <h2>Promos</h2>
         <p class="justificado">
-            Todos los martes: 2x1 en Capuchinos.<br>
+            Lunes y Viernes: 2x1 en Capuchinos.<br>
             Viernes de pastelería: 15% de descuento en pasteles seleccionados.<br>
             Happy Hour: 5pm a 7pm en bebidas frías.
         </p>
-
         <h2>Ubicación</h2>
         <p class="justificado">
-            Nos encontramos en Av. Principal #000, CDMX. ¡Ven a visitarnos y disfruta del buen café en un lugar pensado para ti!
+            Nos encontramos en Av. Revolución #245, Corregidora, Querétaro. ¡Ven a visitarnos y disfruta del buen café en un lugar pensado para ti!
         </p>
+        <button class="btn" onclick="mostrarSeccion('inicio')">Volver al Inicio</button>
+    </div>
 
+    <!-- ========== SECCIÓN GALERÍA ========== -->
+    <div id="galeria" class="container section">
+        <h1>Galería de Imágenes</h1>
+        <p>Explora algunos momentos y productos destacados de Coffee Shop.</p>
+        <div class="galeria">
+            <img src="Coffe_Image1.jpg" alt="Café">
+            <img src="Crepp_1.jpg" alt="Crepa">
+            <img src="Batt_1.jpg" alt="Batido">
+            <img src="Batt_2.jpg" alt="Batido">
+            <img src="Pan_1.jpg" alt="Pan">            
+        </div>
         <button class="btn" onclick="mostrarSeccion('inicio')">Volver al Inicio</button>
     </div>
 
@@ -201,9 +216,9 @@
     <footer>
         <div class="footer-horizontal">
             <span><strong>Instagram:</strong> <a href="https://instagram.com/Coffee_Shop" target="_blank">@Coffee_Shop</a></span>
-            <span><strong>Horarios:</strong> Lun a Sáb - 08:00 a.m. a 08:00 p.m.</span>
-            <span><strong>Contacto:</strong> +52 000 000 0000 | contacto@elbuen-sabor.com</span>
-            <span><strong>Ubicación:</strong> Av. Principal #000, CDMX</span>
+            <span><strong>Horarios:</strong> Lun a Sáb - 08:00 a.m. a 11:00 p.m.</span>
+            <span><strong>Contacto:</strong> +52 442 274 6453 | @Kim Alejandra</span>
+            <span><strong>Ubicación:</strong> Av. Revolución #245, Corregidora, Querétaro.</span>
         </div>
     </footer>
 
