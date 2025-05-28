@@ -1,77 +1,139 @@
-# Documentación del Proyecto: Página Web para Cafetería
+# 📄 Documentación Técnica - Sitio Web de Coffee Shop
+
+## Índice
+
+1. [Descripción General](#descripción-general)
+2. [Lenguajes y Herramientas Utilizadas](#lenguajes-y-herramientas-utilizadas)
+3. [Estructura del Código](#estructura-del-código)
+    - [1. HTML](#1-html)
+    - [2. CSS](#2-css)
+    - [3. JavaScript](#3-javascript)
+4. [Componentes del Sitio](#componentes-del-sitio)
+    - [Inicio](#inicio)
+    - [Menú](#menú)
+    - [Nosotros](#nosotros)
+    - [Galería](#galería)
+    - [Pie de Página](#pie-de-página)
+5. [Responsividad](#responsividad)
+6. [Conclusión](#conclusión)
+
+---
 
 ## Descripción General
-Esta página web está diseñada para una cafetería llamada "Coffee Shop". Cuenta con una página de inicio, una página de menú con 17 productos, y un pie de página con información de contacto, ubicación, horarios y redes sociales. La navegación entre secciones se hace sin recargar la página usando JavaScript.
+
+Este sitio web está diseñado para una cafetería ficticia llamada **Coffee Shop**. Es una página web estática construida con HTML, CSS y JavaScript puro. Proporciona información del menú, una galería de imágenes, detalles sobre la empresa, promociones, y una navegación sencilla entre secciones sin necesidad de recargar la página.
 
 ---
 
-## Herramientas Usadas
+## Lenguajes y Herramientas Utilizadas
 
-- **HTML5**: Estructura y contenido de la página.
-- **CSS3**: Estilos visuales y diseño responsivo.
-- **JavaScript**: Funcionalidad para navegación dinámica entre secciones sin recargar la página.
-
----
-
-## Estructura y Estilos (CSS)
-
-- **Estilos Generales**:
-  - `body`: Fuente Arial, color de fondo beige claro (#f3f0e9).
-  - `.container`: Centrado con un ancho máximo de 800px, fondo claro (#fff8e1), bordes redondeados y sombra para un aspecto limpio y moderno.
-  - `h1`: Color marrón oscuro (#4e342e).
-  - `.btn`: Botones con fondo marrón (#6d4c41), texto blanco, bordes redondeados y efecto hover para mejor interacción visual.
-
-- **Tabla del Menú**:
-  - Tablas con ancho 100%, bordes colapsados.
-  - Celdas con padding y bordes grises claros.
-  - Encabezados con fondo marrón medio (#a1887f) y texto blanco.
-
-- **Secciones**:
-  - `.section`: Oculta por defecto con `display: none`.
-  - `.active`: Sección visible con `display: block`.
-
-- **Pie de Página**:
-  - Fondo beige oscuro (#d7ccc8), texto marrón (#4e342e).
-  - Disposición en línea (flexbox) con separación entre los elementos.
-  - Enlaces con subrayado y cambio de color al pasar el cursor.
-
-- **Responsividad**:
-  - Para pantallas menores a 768px, el pie de página cambia a diseño vertical para mejor lectura.
+| Lenguaje/Herramienta | Uso Principal |
+|----------------------|----------------|
+| **HTML5**            | Estructura del contenido de la página |
+| **CSS3**             | Estilos visuales y diseño responsivo |
+| **JavaScript**       | Interacción y navegación dinámica entre secciones |
+| **Editor de código** (Visual Studio Code, etc.) | Edición y mantenimiento del código |
+| **Imágenes locales** (`.jpg`) | Contenido visual en la sección de galería |
 
 ---
 
-## Funciones Técnicas (JavaScript)
+## Estructura del Código
 
-- **Función `mostrarSeccion(id)`**:
-  - Selecciona todas las secciones con clase `.section` y les quita la clase `.active`.
-  - Luego añade la clase `.active` solo a la sección cuyo `id` coincida con el argumento recibido.
-  - Esto permite mostrar u ocultar secciones sin recargar la página, creando una navegación fluida.
+### 1. HTML
+
+El archivo HTML es la base del sitio web. Se utiliza la estructura semántica `<head>` y `<body>`, y dentro de `<body>` se encuentran varias divisiones (`<div>`) que funcionan como páginas internas (`.section`).
+
+### 2. CSS
+
+El CSS está incluido directamente en el `<head>` dentro de la etiqueta `<style>`. Aquí se define:
+
+- El diseño visual (colores, márgenes, tipografía).
+- La apariencia de botones, tablas y secciones.
+- La galería de imágenes con `flexbox`.
+- Estilos responsivos usando `@media`.
+
+### 3. JavaScript
+
+Se utiliza un pequeño bloque de JavaScript al final del documento para alternar la visibilidad de las secciones del sitio mediante la función:
+
+```javascript
+function mostrarSeccion(id) {
+    const secciones = document.querySelectorAll('.section');
+    secciones.forEach(seccion => seccion.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+```
+
+---
+
+## Componentes del Sitio
+
+### Inicio
+
+Contiene:
+
+- Bienvenida.
+- Imagen del logo.
+- Botones para navegar a otras secciones (`menu`, `nosotros`, `galeria`).
+
+### Menú
+
+- Tabla con productos, costos y tiempos de espera.
+- Diseño limpio y accesible.
+
+### Nosotros
+
+Secciones que explican:
+
+- Quiénes somos
+- Misión y visión
+- Servicios disponibles
+- Promociones y ubicación
+
+### Galería
+
+- Contiene imágenes de productos como café, crepas, batidos y pan.
+- Utiliza `flex-wrap` para mostrar imágenes de forma adaptable.
+- Efecto `hover` con escalado para mejorar la experiencia visual.
+
+```html
+<div class="galeria">
+    <img src="Coffe_Image1.jpg" alt="Café">
+    <img src="Crepp_1.jpg" alt="Crepa">
+    ...
+</div>
+```
+
+### Pie de Página
+
+- Redes sociales
+- Horarios
+- Contacto
+- Ubicación
+
+Responsivo y organizado en formato horizontal usando `flexbox`.
 
 ---
 
-## Flujo de Usuario
+## Responsividad
 
-1. El usuario entra a la página y ve la sección de inicio con un botón para ir al menú.
-2. Al hacer clic en el botón "Ver Menú", se oculta la sección inicio y se muestra la sección menú.
-3. En la sección menú, se muestra una tabla con 17 productos, sus precios y tiempos de espera.
-4. Desde el menú, el usuario puede regresar a la página inicio con el botón "Volver al Inicio".
-5. En cualquier momento, el pie de página proporciona información de contacto, ubicación, horarios y un enlace a Instagram.
+Se utiliza un `@media query`:
 
----
+```css
+@media (max-width: 768px) {
+    .footer-horizontal {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+```
 
-## Consideraciones
-
-- El logo debe estar disponible en el archivo `Logo.jpg` para mostrarse correctamente.
-- Los enlaces y contactos en el pie de página pueden personalizarse según la información real del negocio.
-- La página está diseñada para ser sencilla, clara y accesible.
-
----
-
-## Posibles Mejoras Futuras
-
-- Agregar formularios de contacto o reservas.
-- Incluir imágenes de los productos en el menú.
-- Añadir animaciones para transiciones más suaves.
-- Implementar un diseño totalmente responsivo para dispositivos móviles.
+Esto asegura que el pie de página se adapte a pantallas pequeñas como móviles y tablets.
 
 ---
+
+## Conclusión
+
+Este proyecto es un excelente ejemplo de una **SPA básica** (Single Page Application) sin frameworks. Gracias al uso de HTML, CSS y JavaScript puros, se logra una navegación fluida entre secciones sin recargar la página, un diseño limpio y amigable para el usuario, y una estructura fácilmente escalable.
+
+> Ideal para pequeñas cafeterías, restaurantes o proyectos escolares.
