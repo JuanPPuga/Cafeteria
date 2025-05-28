@@ -103,3 +103,21 @@ footer a:hover {
     text-align: justify;
     margin-bottom: 15px;
 }
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.galeria img {
+    max-width: 200px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
