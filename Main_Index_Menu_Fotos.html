@@ -2,10 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Cafetería El Buen Sabor</title>
+    <title>Coffee Shop</title>
     <style>
-        /* ====== ESTILOS GENERALES ====== */
-
         body {
             font-family: Arial, sans-serif;
             background-color: #f3f0e9;
@@ -23,7 +21,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
+        h1, h2 {
             color: #4e342e;
         }
 
@@ -31,18 +29,19 @@
             display: inline-block;
             padding: 10px 20px;
             margin-top: 20px;
+            margin-right: 10px;
             background-color: #6d4c41;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            cursor: pointer;
         }
 
         .btn:hover {
             background-color: #5d4037;
         }
 
-        /* ====== ESTILOS DE LA TABLA DEL MENÚ ====== */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -60,14 +59,55 @@
             color: white;
         }
 
-        /* ====== OCULTAR SECCIONES ALTERNATIVAS ====== */
         .section {
             display: none;
         }
 
-        /* ====== MOSTRAR SECCIÓN ACTIVA ====== */
         .active {
             display: block;
+        }
+
+        footer {
+            background-color: #d7ccc8;
+            color: #4e342e;
+            padding: 15px 20px;
+            font-size: 14px;
+            border-top: 2px solid #bcaaa4;
+            overflow-x: auto;
+        }
+
+        .footer-horizontal {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            white-space: nowrap;
+        }
+
+        .footer-horizontal span {
+            display: inline-block;
+        }
+
+        footer a {
+            color: #4e342e;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #3e2723;
+        }
+
+        @media (max-width: 768px) {
+            .footer-horizontal {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .justificado {
+            text-align: justify;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -75,18 +115,17 @@
 
     <!-- ========== SECCIÓN DE INICIO ========== -->
     <div id="inicio" class="container section active">
+        <img src="Logo.jpg" alt="Logo de Coffee Shop" style="max-width: 150px; margin-bottom: 20px;">
         <h1>Bienvenido a Coffee Shop</h1>
-        <p>Vive la Experiencia de un Buen Sabor.</p>
         <p>Descubre nuestras deliciosas opciones en el menú.</p>
-        <!-- Botón que muestra la sección del menú -->
+        <p>Vive la Experiencia de un Buen Sabor.</p>
         <button class="btn" onclick="mostrarSeccion('menu')">Ver Menú</button>
+        <button class="btn" onclick="mostrarSeccion('nosotros')">Nosotros</button>
     </div>
 
-    <!-- ========== SECCIÓN DEL MENÚ ========== -->
+        <!-- ========== SECCIÓN DEL MENÚ ========== -->
     <div id="menu" class="container section">
         <h1>Menú de la Cafetería</h1>
-
-        <!-- Tabla con productos, precios y tiempo de espera -->
         <table>
             <thead>
                 <tr>
@@ -96,44 +135,83 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Café Americano</td>
-                    <td>$25</td>
-                    <td>5 minutos</td>
-                </tr>
-                <tr>
-                    <td>Capuchino</td>
-                    <td>$35</td>
-                    <td>7 minutos</td>
-                </tr>
-                <tr>
-                    <td>Panini de Pollo</td>
-                    <td>$60</td>
-                    <td>10 minutos</td>
-                </tr>
-                <tr>
-                    <td>Pastel de Chocolate</td>
-                    <td>$40</td>
-                    <td>4 minutos</td>
-                </tr>
+                <tr><td>Café Americano</td><td>$25</td><td>5 minutos</td></tr>
+                <tr><td>Capuchino</td><td>$35</td><td>7 minutos</td></tr>
+                <tr><td>Panini de Pollo</td><td>$60</td><td>10 minutos</td></tr>
+                <tr><td>Pastel de Chocolate</td><td>$40</td><td>4 minutos</td></tr>
+                <tr><td>Espresso</td><td>$20</td><td>3 minutos</td></tr>
+                <tr><td>Latte</td><td>$40</td><td>6 minutos</td></tr>
+                <tr><td>Moka</td><td>$45</td><td>6 minutos</td></tr>
+                <tr><td>Te Matcha</td><td>$38</td><td>5 minutos</td></tr>
+                <tr><td>Sandwich Vegano</td><td>$55</td><td>8 minutos</td></tr>
+                <tr><td>Brownie</td><td>$30</td><td>4 minutos</td></tr>
+                <tr><td>Jugo Natural</td><td>$28</td><td>3 minutos</td></tr>
+                <tr><td>Agua Mineral</td><td>$15</td><td>1 minuto</td></tr>
+                <tr><td>Croissant</td><td>$35</td><td>5 minutos</td></tr>
+                <tr><td>Té de Hierbas</td><td>$25</td><td>4 minutos</td></tr>
+                <tr><td>Chai Latte</td><td>$42</td><td>6 minutos</td></tr>
+                <tr><td>Ensalada César</td><td>$65</td><td>12 minutos</td></tr>
+                <tr><td>Hot Chocolate</td><td>$38</td><td>5 minutos</td></tr>
             </tbody>
         </table>
-
-        <!-- Botón para regresar a la sección de inicio -->
         <button class="btn" onclick="mostrarSeccion('inicio')">Volver al Inicio</button>
     </div>
 
-    <!-- ========== SCRIPT PARA CAMBIAR DE SECCIONES ========== -->
-    <script>
-        // Función que muestra la sección deseada y oculta las demás
-        function mostrarSeccion(id) {
-            // Ocultar todas las secciones
-            const secciones = document.querySelectorAll('.section');
-            secciones.forEach(seccion => {
-                seccion.classList.remove('active');
-            });
 
-            // Mostrar solo la sección seleccionada
+    <!-- ========== SECCIÓN NOSOTROS ========== -->
+    <div id="nosotros" class="container section">
+        <h1>Sobre Nosotros</h1>
+        
+        <h2>¿Quiénes somos?</h2>
+        <p class="justificado">
+            Somos una cafetería apasionada por brindar experiencias únicas a través del sabor, el aroma y el ambiente. En Coffee Shop creemos en el poder de una buena taza de café para conectar personas y momentos.
+        </p>
+
+        <h2>Misión</h2>
+        <p class="justificado">
+            Ofrecer productos de alta calidad en un ambiente acogedor, fomentando la cultura del café y el bienestar de nuestros clientes, colaboradores y comunidad.
+        </p>
+
+        <h2>Visión</h2>
+        <p class="justificado">
+            Ser la cafetería preferida en la ciudad, reconocida por su sabor inigualable, excelente atención y compromiso con la sostenibilidad.
+        </p>
+
+        <h2>Servicios</h2>
+        <p class="justificado">
+            Contamos con servicio de cafetería, alimentos ligeros, pedidos para llevar, eventos especiales, conexión Wi-Fi y recargas de energía para dispositivos.
+        </p>
+
+        <h2>Promos</h2>
+        <p class="justificado">
+            Todos los martes: 2x1 en Capuchinos.<br>
+            Viernes de pastelería: 15% de descuento en pasteles seleccionados.<br>
+            Happy Hour: 5pm a 7pm en bebidas frías.
+        </p>
+
+        <h2>Ubicación</h2>
+        <p class="justificado">
+            Nos encontramos en Av. Principal #000, CDMX. ¡Ven a visitarnos y disfruta del buen café en un lugar pensado para ti!
+        </p>
+
+        <button class="btn" onclick="mostrarSeccion('inicio')">Volver al Inicio</button>
+    </div>
+
+    <!-- ========== PIE DE PÁGINA ========== -->
+    <footer>
+        <div class="footer-horizontal">
+            <span><strong>Instagram:</strong> <a href="https://instagram.com/Coffee_Shop" target="_blank">@Coffee_Shop</a></span>
+            <span><strong>Horarios:</strong> Lun a Sáb - 08:00 a.m. a 08:00 p.m.</span>
+            <span><strong>Contacto:</strong> +52 000 000 0000 | contacto@elbuen-sabor.com</span>
+            <span><strong>Ubicación:</strong> Av. Principal #000, CDMX</span>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPT PARA NAVEGAR ENTRE SECCIONES ========== -->
+    <script>
+        function mostrarSeccion(id) {
+            const secciones = document.querySelectorAll('.section');
+            secciones.forEach(seccion => seccion.classList.remove('active'));
             document.getElementById(id).classList.add('active');
         }
     </script>
