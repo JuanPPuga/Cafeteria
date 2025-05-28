@@ -1,8 +1,8 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html> 
+<html lang="es"> <!-- Tipografia con acentos y letras en español -->
 <head>
     <meta charset="UTF-8">
-    <title>Coffee Shop</title>
+    <title>Coffee Shop</title> <!-- Titulo de TAB -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,7 +66,8 @@
         .active {
             display: block;
         }
-
+        
+        /* Estilo de Pie de Pagina */
         footer {
             background-color: #d7ccc8;
             color: #4e342e;
@@ -89,22 +90,24 @@
             display: inline-block;
         }
 
+        /* Estilo de Colores */
         footer a {
             color: #4e342e;
             text-decoration: underline;
         }
-
         footer a:hover {
             color: #3e2723;
         }
-
+        
+        /* Estilo de Box */
         @media (max-width: 768px) {
             .footer-horizontal {
                 flex-direction: column;
                 align-items: flex-start;
             }
         }
-
+        
+        /* Estilo de justificacion de letra */
         .justificado {
             text-align: justify;
             margin-bottom: 15px;
@@ -118,13 +121,15 @@
             justify-content: center;
             margin-top: 20px;
         }
-
+        
+        /* Tamaño de imagen */
         .galeria img {
             max-width: 200px;
             border-radius: 10px;
             transition: transform 0.2s;
         }
-
+        
+        /* Escala de Imagen */
         .galeria img:hover {
             transform: scale(1.05);
         }
@@ -134,33 +139,39 @@
 
     <!-- ========== SECCIÓN DE INICIO ========== -->
     <div id="inicio" class="container section active">
-        <img src="Logo.jpg" alt="Logo de Coffee Shop" style="max-width: 150px; margin-bottom: 20px;">
-        <h1>Bienvenido a Coffee Shop</h1>
-        <p>Descubre nuestras deliciosas opciones en el menú.</p>
-        <p>Vive la Experiencia de un Buen Sabor.</p>
-        <button class="btn" onclick="mostrarSeccion('menu')">Ver Menú</button>
-        <button class="btn" onclick="mostrarSeccion('nosotros')">Nosotros</button>
-        <button class="btn" onclick="mostrarSeccion('galeria')">Ver Galería</button>
+        <img src="Logo.jpg" alt="Logo de Coffee Shop" style="max-width: 150px; margin-bottom: 20px;"> <!-- Logo Princiapal -->
+        <h1>Bienvenido a Coffee Shop</h1> <!-- Titulo -->
+        <p>Descubre nuestras deliciosas opciones en el menú.</p> <!-- Motivacion de Pagina -->
+        <p>Vive la Experiencia de un Buen Sabor.</p> <!-- Eslogan -->
+        <button class="btn" onclick="mostrarSeccion('menu')">Ver Menú</button> <!-- Direccion de Menus -->
+        <button class="btn" onclick="mostrarSeccion('nosotros')">Nosotros</button> <!-- Direccion a Nosotros -->
+        <button class="btn" onclick="mostrarSeccion('galeria')">Ver Galería</button> <!-- Direccion a Galeria -->
     </div>
 
     <!-- ========== SECCIÓN DEL MENÚ ========== -->
     <div id="menu" class="container section">
-        <h1>Menú de la Cafetería</h1>
+        <h1>Menú de la Cafetería</h1> <!-- Titulo de Pagina -->
         <table>
             <thead>
-                <tr>
+                <tr> <!-- Main Head de Tabla -->
                     <th>Producto</th>
                     <th>Costo</th>
                     <th>Tiempo de Espera</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> <!-- Contenido en Tablas -->
                 <tr><td>Te</td><td>$30.00</td><td>5 minutos</td></tr>
+                <!-- Nombre | Precio | Tiempo Estimado -->
                 <tr><td>Crepas</td><td>$20.00</td><td>7 minutos</td></tr>
+                <!-- Nombre | Precio | Tiempo Estimado -->
                 <tr><td>Licuados</td><td>$40.00</td><td>10 minutos</td></tr>
+                <!-- Nombre | Precio | Tiempo Estimado -->
                 <tr><td>Pan</td><td>$10.00</td><td>Elección de Comprador</td></tr>
+                <!-- Nombre | Precio | Tiempo Estimado -->
                 <tr><td>Malteadas</td><td>$45.00</td><td>7 minutos</td></tr>
+                <!-- Nombre | Precio | Tiempo Estimado -->
                 <tr><td>Chocolate Caliente</td><td>$60.00</td><td>10 minutos</td></tr>
+                <!-- Nombre | Precio | Tiempo Estimado -->
             </tbody>
         </table>
         <button class="btn" onclick="mostrarSeccion('inicio')">Volver al Inicio</button>
@@ -169,29 +180,29 @@
     <!-- ========== SECCIÓN NOSOTROS ========== -->
     <div id="nosotros" class="container section">
         <h1>Sobre Nosotros</h1>
-        <h2>¿Quiénes somos?</h2>
+        <h2>¿Quiénes somos?</h2> <!-- Descripcion de Empresa -->
         <p class="justificado">
             Somos una cafetería apasionada por brindar experiencias únicas a través del sabor, el aroma y el ambiente. En Coffee Shop creemos en el poder de una buena taza de café para conectar personas y momentos.
         </p>
-        <h2>Misión</h2>
+        <h2>Misión</h2> <!-- Mision de la Empresa -->
         <p class="justificado">
             Ofrecer productos de alta calidad en un ambiente acogedor, fomentando la cultura del café y el bienestar de nuestros clientes, colaboradores y comunidad.
         </p>
-        <h2>Visión</h2>
+        <h2>Visión</h2> <!-- Resumen de Vision de la Cafeteria -->
         <p class="justificado">
             Ser la cafetería preferida en la ciudad, reconocida por su sabor inigualable, excelente atención y compromiso con la sostenibilidad.
         </p>
-        <h2>Servicios</h2>
+        <h2>Servicios</h2> <!-- Servicios -->
         <p class="justificado">
             Contamos con servicio de cafetería, alimentos ligeros, pedidos para llevar, eventos especiales, conexión Wi-Fi y recargas de energía para dispositivos.
         </p>
-        <h2>Promos</h2>
+        <h2>Promos</h2> <!-- Descripcion textual -->
         <p class="justificado">
             Lunes y Viernes: 2x1 en Capuchinos.<br>
             Viernes de pastelería: 15% de descuento en pasteles seleccionados.<br>
             Happy Hour: 5pm a 7pm en bebidas frías.
         </p>
-        <h2>Ubicación</h2>
+        <h2>Ubicación</h2> <!-- Descricion de Ubicacion -->
         <p class="justificado">
             Nos encontramos en Av. Revolución #245, Corregidora, Querétaro. ¡Ven a visitarnos y disfruta del buen café en un lugar pensado para ti!
         </p>
@@ -200,30 +211,34 @@
 
     <!-- ========== SECCIÓN GALERÍA ========== -->
     <div id="galeria" class="container section">
-        <h1>Galería de Imágenes</h1>
-        <p>Explora algunos momentos y productos destacados de Coffee Shop.</p>
-        <div class="galeria">
-            <img src="Coffe_Image1.jpg" alt="Café">
-            <img src="Crepp_1.jpg" alt="Crepa">
-            <img src="Batt_1.jpg" alt="Batido">
-            <img src="Batt_2.jpg" alt="Batido">
-            <img src="Pan_1.jpg" alt="Pan">            
+        <h1>Galería de Imágenes</h1> <!-- Titulo de Galeria -->
+        <p>Explora algunos momentos y productos destacados de Coffee Shop.</p> <!-- Subtitulo -->
+        <div class="galeria"> <!-- Seccion de imagenes o Box -->
+            <img src="Coffe_Image1.jpg" alt="Café"> <!-- Imagen por source -->
+            <img src="Crepp_1.jpg" alt="Crepa"> <!-- Imagen por source -->
+            <img src="Batt_1.jpg" alt="Batido"> <!-- Imagen por source -->
+            <img src="Batt_2.jpg" alt="Batido"> <!-- Imagen por source -->
+            <img src="Pan_1.jpg" alt="Pan"> <!-- Imagen por source -->
         </div>
-        <button class="btn" onclick="mostrarSeccion('inicio')">Volver al Inicio</button>
+        <button class="btn" onclick="mostrarSeccion('inicio')">Volver al Inicio</button> <!-- Boton de direcciones -->
     </div>
 
     <!-- ========== PIE DE PÁGINA ========== -->
     <footer>
         <div class="footer-horizontal">
             <span><strong>Instagram:</strong> <a href="https://instagram.com/Coffee_Shop" target="_blank">@Coffee_Shop</a></span>
+            <!-- Escala de letra | Referencia o Direccion | Slash | Texto -->
             <span><strong>Horarios:</strong> Lun a Sáb - 08:00 a.m. a 11:00 p.m.</span>
+            <!-- Escala de letra | Texto -->
             <span><strong>Contacto:</strong> +52 442 274 6453 | @Kim Alejandra</span>
+            <!-- Escala de letra | Texto -->
             <span><strong>Ubicación:</strong> Av. Revolución #245, Corregidora, Querétaro.</span>
+            <!-- Escala de letra | Texto -->
         </div>
     </footer>
 
     <!-- ========== SCRIPT PARA NAVEGAR ENTRE SECCIONES ========== -->
-    <script>
+    <script> 
         function mostrarSeccion(id) {
             const secciones = document.querySelectorAll('.section');
             secciones.forEach(seccion => seccion.classList.remove('active'));
